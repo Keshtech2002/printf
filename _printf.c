@@ -2,22 +2,6 @@
 #include "main.h"
 #include "stdio.h"
 
-int print_num(int num)
-{
-	if (num < 0)
-	{
-		_putchar('-');
-		/*count = count + 1;*/
-		num = -(num);
-	}AOA
-	if (num > 9)
-		print_num(num / 10);
-
-	_putchar((num % 10) + '0');
-	/*count = count + 1;*/
-	return (0);
-}
-
 /**
  * _printf - function that prints based on format specifier
  * @format: takes in format specifier
@@ -43,32 +27,25 @@ int _printf(const char *format, ...)
 		{
 			if (format[i + 1] == 'c')
 			{
-				_putchar(va_arg(args, int));
+				_print_char(va_arg(args, int));
 				count = count + 1;
 				i++;
 			}
 			else if (format[i + 1] == 's')
 			{
 				i++;
-				OB
 				str = va_arg(args, char *);
-				while (str[k] != '\0')
-				{
-					_putchar(str[k]);
-					count = count + 1;
-					k++;
-				}
+				_print_str(str);
 			}
 			else if (format[i + 1] == '%')
 			{
 				i++;
-				_putchar('%');
+				_print_char('%');
 				count = count + 1;
 			}
 			else if (format[i + 1] == 'd')
 			{
 				i++;
-				OB
 				num = va_arg(args, int);
 				print_num(num);
 			}

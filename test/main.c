@@ -7,11 +7,11 @@ int main(void)
 {
 	int n = 0;
 	
-	n = _printf("%d\n", 2650);
+	n = _printf("%c %d %s %%\n", 'M', 2650, "MUSAB");
 
 	printf("n = %d\n", n);
 	
-	n = printf("%d\n", 2650);
+	n = printf("%c %d %s %%\n", 'M', 2650, "MUSAB");
 
 	printf("n = %d\n", n);
 
