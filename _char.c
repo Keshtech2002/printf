@@ -1,12 +1,15 @@
 #include "main.h"
 
 /**
- * _print_char - prints the character for the _printf
+ * _print_c - prints the character for the _printf
  * @c: character to print 
- * Return: character
+ * Return: 1
  */
 
-int _print_char(char c)
+int _print_c(va_list c)
 {
-	return (_putchar(c));
+	char character = (char)va_arg(c, int);
+
+	_putchar(character);
+	return (1);
 }

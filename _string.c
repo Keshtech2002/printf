@@ -1,18 +1,23 @@
 #include "main.h"
 
 /**
- * _print_str - prints strings for _printf
+ * _print_s - prints strings for _printf
  * @s: string to print
- * Return: 
+ * Return: number of characters printed
  */
 
-int _print_str(char *s)
+int _print_s(va_list s)
 {
-	int i;
+	int count;
+	char *str = va_arg(s, char *);
 
-	for (i = 0; s[i] != '\0'; i++)
+	if (str == NULL)
+		str = "(null)";
+
+	for (count = 0; str[count]; count++)
 	{
-		_putchar(s[i]);
+		_putchar(str[count]);
 	}
-	return (0);
+
+	return (count);
 }
