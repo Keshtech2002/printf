@@ -10,48 +10,42 @@
 
 int _printf(const char *format, ...)
 {
-	int i, num, k = 0;
+	int i = 0, count = 0;
 	va_list args;
-	char *str;
-	int count = 0;
+	int (*function)(va_list);
+
+	if (format == NULL)
+		return (-1);
 
 	va_start(args, format);
-	for (i = 0; format[i] != '\0'; i++)
+
+	while (format[i])
 	{
-		if (format[i] != '%')
+		for (; format[i] != '%' && format[i]; i++)
 		{
 			_putchar(format[i]);
 			count = count + 1;
 		}
-		else
+
+		if (!format[i])
+			return (count);
+
+		function = specifier(&format[i + 1]);
+		if (function != NULL)
 		{
-			if (format[i + 1] == 'c')
-			{
-				_print_char(va_arg(args, int));
-				count = count + 1;
-				i++;
-			}
-			else if (format[i + 1] == 's')
-			{
-				i++;
-				str = va_arg(args, char *);
-				_print_str(str);
-			}
-			else if (format[i + 1] == '%')
-			{
-				i++;
-				_print_char('%');
-				count = count + 1;
-			}
-			else if (format[i + 1] == 'd')
-			{
-				i++;
-				num = va_arg(args, int);
-				print_num(num);
-			}
+			count = count + function(args);
+			i = i + 2;
+			continue;
 		}
+		if (!format[i + 1])
+			return (-1);
+		_putchar(format[i]);
+		count = count + 1;
+		if (format[i + 1] == '%')
+			i = i + 2;
+		else
+			i++;
 	}
-	
 	va_end(args);
 	return (count);
 }
