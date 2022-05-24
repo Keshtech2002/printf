@@ -3,31 +3,31 @@
 /**
  * _print_b - takes an unsigned int and prints it in binary notation
  * @b: unsigned in to print
- * @x: (2 ^ 31) 2147483648
+ * @m: (2 ^ 31) 2147483648
  * Return: number of digits printed
  */
 
 int _print_b(va_list b)
 {
-	unsigned int x, y, j, add;
-	unsigned int c[32];
+	unsigned int n, m, i, add;
+	unsigned int a[32];
 	int count;
 
-	y = va_arg(b, unsigned int);
-	x = 2147483648;
-	c[0] = y / x;
-	for (j = 1; j < 32; j++)
+	n = va_arg(b, unsigned int);
+	m = 2147483648;
+	a[0] = n / m;
+	for (i = 1; i < 32; i++)
 	{
-		x = x / 2;
-		c[j] = (y / x) % 2;
+		m = m / 2;
+		a[i] = (n / m) % 2;
 	}
-	for (j = 0, add = 0, count = 0; j < 32; j++)
+	for (i = 0, add = 0, count = 0; i < 32; i++)
 	{
-		add = add + c[j];
-		if (add || j == 31)
+		add = add + a[i];
+		if (add || i == 31)
 		{
-			_putchar('0' + c[j]);
-			count = count + 1;
+			_putchar('0' + a[i]);
+			count++;
 		}
 	}
 	return (count);
