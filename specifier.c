@@ -23,7 +23,10 @@ int (*specifier(const char *format))(va_list args)
 		{"o", _print_o},
 		{"S", _print_S},
 		{"r", _print_r},
+<<<<<<< HEAD
 		{"p", _print_p},
+=======
+>>>>>>> db6d8d209767d156343f83bb931c81a93209143f
 		{"R", _print_R},
 		{NULL, NULL}
 	};
