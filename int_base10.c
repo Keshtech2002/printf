@@ -7,7 +7,7 @@
  * Return: number of digits printed
  */
 
-int print_i(va_list i)
+int _print_i(va_list i)
 {
 	int a[10];
 	int i, x, y, add, count;
