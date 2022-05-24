@@ -28,7 +28,7 @@ int _print_i(va_list i)
 		_putchar('-');
 		count = count + 1;
 		for (i = 0; i < 10; i++)
-			a[i] = a[i] -1;
+			a[i] = a[i] * -1;
 	}
 
 	for (i = 0, add = 0; i < 10; i++)
