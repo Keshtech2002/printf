@@ -1,5 +1,5 @@
 #include "../main.h"
-
+#include <limits.h>
 /**
  * main - Entry point
  *
@@ -7,6 +7,9 @@
  */
 int main(void)
 {
-    _printf("%o, %x, %X, %u\n", 98, 98, 98, 98);
-    return (0);
+
+	unsigned int ui = (unsigned int)INT_MAX + 1024;
+
+	_printf("%o, %x, %X, %u\n", ui, ui, ui, 98);
+	return (0);
 }
