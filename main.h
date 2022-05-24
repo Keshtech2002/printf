@@ -5,6 +5,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ * struct print_type - structure for printing various types
+ * @typ: type to print
+ * @func: function to print
+ */
+
 typedef struct print_struct
 {
 	char *typ;
