@@ -1,5 +1,6 @@
 #include "main.h"
 
+static unsigned long _power(unsigned int base, unsigned int exponent);
 /**
  * _power - calculates an exponent
  * @base: base of exponent
@@ -20,7 +21,7 @@ static unsigned long _power(unsigned int base, unsigned int exponent)
 }
 
 /**
- * print_p - prints an address
+ * _print_p - prints an address
  * @p: address to print
  *
  * Return: number of characters to print
