@@ -34,7 +34,6 @@ int _print_S(va_list S);
 int hex_print(char c);
 int _print_r(va_list r);
 int _print_p(va_list p);
-unsigned long _power(unsigned int base, unsigned int exponent);
 int _print_R(va_list R);
 
 #endif
