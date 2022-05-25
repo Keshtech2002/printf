@@ -2,7 +2,7 @@
 
 /**
  * _print_c - prints the character for the _printf
- * @c: character to print 
+ * @c: character to print
  * Return: 1
  */
 
